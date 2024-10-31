@@ -1,7 +1,7 @@
 {
-  "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
+  "index": "OVERVIEW",
+  "another": "FRONTEND",
+  "advanced": "SMART CONTRACT",
   "about": {
     "title": "About",
     "type": "page"
