@@ -1,167 +1,3040 @@
-# Metamuse Frontend Documentation
-
-**Version**: 1.0  
-**Description**: Metamuse is a collaborative platform where artists can create, mint, and showcase artwork in a marketplace for collectors to place bids.
-
-## Table of Contents
-1. [Overview](#overview)
-2. [Technology Stack](#technology-stack)
-3. [Project Setup](#project-setup)
-4. [Core Components](#core-components)
-5. [State Management](#state-management)
-6. [Socket and Real-time Communication](#socket-and-real-time-communication)
-7. [Web3 Integration](#web3-integration)
-8. [UI Components and Styling](#ui-components-and-styling)
-9. [Future Enhancements](#future-enhancements)
+# MetaMuse
 
 ## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
 
-The Metamuse frontend is built with React, TypeScript, and Vite to ensure high-performance development. It leverages **Thirdweb** and **web3.js** for blockchain interactions, enabling NFT minting for collaborative artwork. Artists collaborate on a **Konva**-based canvas, and their work appears in a marketplace where users can place real-time bids.
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
 
-## Technology Stack
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
 
-| Technology             | Description                                                                           |
-| ---------------------- | ------------------------------------------------------------------------------------- |
-| **React-TypeScript-Vite** | Provides a component-based, type-safe UI.                                          |
-| **Tacstack**           | Manages UI state and data flow effectively.                                           |
-| **Lucide-react**       | Provides a library of icons for consistent UI elements.                               |
-| **React-toastify**     | Displays notifications to improve user experience.                                    |
-| **Tailwind CSS**       | Styling framework for rapid UI design and custom styles.                              |
-| **Socket.IO-Client**   | Enables real-time communication, especially for bidding and collaboration.            |
-| **Konva**              | Canvas-based interface for creating and drawing artwork.                              |
-| **Web3.js**            | JavaScript library for Ethereum blockchain interactions.                              |
-| **Thirdweb**           | Simplifies blockchain integration, particularly for NFT minting.                     |
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
 
-## Project Setup
+## Getting Started
 
-1. **Clone the Repository and Install Dependencies**
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
    ```bash
-   git clone <repository-url>
-   cd metamuse-frontend
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
 
+1. **Install dependencies:**
+   ```bash
+   npm install
 
-Environment Variables
+2. **Start the local development server:**
+   ```bash
+   npm start
 
-Create a .env file with the following variables:
+### Running the Application
 
-REACT_APP_API_URL: Backend API URL
-REACT_APP_SOCKET_URL: Socket server URL
-REACT_APP_THIRDWEB_KEY: Thirdweb API key
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
 
-Run the Development Server
-```bash
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
 
-npm run dev
-Core Components
+## Smart Contract Development
 
+Smart contracts in this project handle:
 
-CANVAS
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
 
-Built with: Konva
 
-Features:
 
-Drawing tools (brush, shapes, colors)
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
 
-Saves collaborative artwork locally and on the blockchain
 
 
-MARKETPLACE
 
-Features:
+# MetaMuse
 
-Fetches and displays minted artworks
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
 
-Enables real-time bidding using Socket.IO
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
 
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
 
-NOTIFICTION
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
 
-Tool: React-toastify
+## Getting Started
 
-Features:
-Provides success, error, and bidding notifications to enhance user experience
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
 
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
 
-User Authentication
+1. **Install dependencies:**
+   ```bash
+   npm install
 
-Tool: Thirdweb
+2. **Start the local development server:**
+   ```bash
+   npm start
 
-Purpose: Used for Web3 authentication and wallet management
+### Running the Application
 
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
 
-Minting
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
 
-Tools: web3.js and Thirdweb
+## Smart Contract Development
 
-Functionality:
-Mints collaborative artwork as NFTs
+Smart contracts in this project handle:
 
-Minted NFTs appear on the marketplace for bidding
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
 
 
-State Management
 
-Tool: Tacstack
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
 
-Features:
-Used for global state management, ensuring smooth data flow across components
 
-Localized state is used for specific components (e.g., artwork data, bid status) to optimize performance and reduce re-rendering
 
 
-Socket and Real-time Communication
+# MetaMuse
 
-Tool: Socket.IO-Client
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
 
-Features:
-Enables real-time events such as:
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
 
-Canvas collaboration
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
 
-Live bidding updates
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
 
-Notifications for bid increments and outbid events
-Ensure the Socket.IO server URL is configured in .env.
+## Getting Started
 
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
 
-Web3 Integration
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
 
-Thirdweb
+1. **Install dependencies:**
+   ```bash
+   npm install
 
-Purpose:
-Handles the NFT minting process
+2. **Start the local development server:**
+   ```bash
+   npm start
 
-Manages user authentication and wallet connections
+### Running the Application
 
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
 
-Web3.js
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
 
-Functionality:
+## Smart Contract Development
 
-Manages transactions, wallet connections, and contract interactions for bidding and transfers
+Smart contracts in this project handle:
 
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
 
-UI Components and Styling
 
-Icons: Provided by Lucide-react for consistent iconography
 
-Styling: Built with Tailwind CSS for a responsive, mobile-friendly design with custom styling classes
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
 
-Notifications: Configured with React-toastify to provide real-time status updates
 
-Future Enhancements
 
 
-Additional Bidding Features:
+# MetaMuse
 
-Bid history and analytics
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
 
-Enhanced Collaboration Tools:
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
 
-Improved collaboration features on the Konva canvas
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
 
-Wallet and Blockchain Support:
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
 
-Multi-wallet and multi-chain support capabilities for a broader user experience.
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
+
+# MetaMuse
+
+## Overview
+The MetaMuse is a decentralized application that allows artists to collaboratively create digital artwork in real-time, mint it as a non-fungible token (NFT) on Lisk, and distribute fractional ownership using Arbitrum. This platform ensures transparent royalty distribution and shared ownership, empowering artists to collaborate creatively and securely.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Smart Contract Development](#smart-contract-development)
+- [Project Structure](#project-structure)
+- [License](#license)
+
+## Features
+- **Real-time Collaborative Canvas**: Multiple artists can create and edit artwork in real-time.
+- **NFT Minting on Lisk**: The completed artwork is minted as an NFT on the Lisk blockchain.
+- **Fractional Ownership on Arbitrum**: Ownership shares and royalties are distributed among collaborators via Arbitrum smart contracts.
+- **Decentralized Storage**: Artwork and metadata are stored on IPFS for decentralized, secure storage.
+
+## Tech Stack
+- **Blockchain**: Lisk, Arbitrum
+- **Smart Contracts**: Solidity, Forge
+- **Backend**: Lisk SDK, IPFS (Pinata or Infura)
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js and npm
+- Lisk SDK
+- Arbitrum Development Environment
+- IPFS CLI
+- Foundry & Forge
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeX042/METAMUSE.git
+   cd collaborative-nft-art-platform
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+
+2. **Start the local development server:**
+   ```bash
+   npm start
+
+### Running the Application
+
+3. **Launch Lisk and Arbitrum nodes:** Follow setup instructions for Lisk SDK and Arbitrum.
+
+4. **Deploy the Arbitrum smart contracts with Forge:**
+   - Ensure Forge is installed and set up by following the Foundry book.
+   - Deploy contracts from the contracts folder:
+   ```bash
+   forge create --rpc-url <ARBITRUM_RPC_URL> --private-key <YOUR_PRIVATE_KEY> src/YourContract
+
+## Smart Contract Development
+
+Smart contracts in this project handle:
+
+- **Fractional Ownership**: Distributing shares among contributors.
+- **Royalty Distribution**: Automatically redistributing royalties to collaborators on resale.
+
+
+
+collaborative-nft-art-platform/
+├── contracts/             
+├── src/                   
+│   ├── components/        
+│   └── services/          
+├── script/                
+├── README.md
+└── package.json
+
+
+
 
