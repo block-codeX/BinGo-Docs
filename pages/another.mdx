@@ -1,100 +1,40 @@
-Metamuse Frontend Documentation
-Version: 1.0
-Description: Metamuse is a collaborative platform for artists to create, mint, and showcase artworks in a marketplace where collectors can place bids.
+# Metamuse Frontend Documentation
 
-Table of Contents
-Overview
-Technology Stack
-Project Setup
-Core Components
-State Management
-Socket and Real-time Communication
-Web3 Integration
-UI Components and Styling
-Overview
-The Metamuse frontend is built using React with TypeScript and Vite for a high-performance development environment. It leverages Thirdweb and web3.js for blockchain interactions, enabling minting of collaborative artwork as NFTs. Artists can collaborate on a Konva-based canvas and view artwork in a marketplace where users can bid in real time.
+**Version**: 1.0  
+**Description**: Metamuse is a collaborative platform where artists can create, mint, and showcase artwork in a marketplace for collectors to place bids.
 
-Technology Stack
-Technology	Description
-React-TypeScript-Vite	Core framework for component-based, type-safe UI.
-Tacstack	Ensures effective UI state management and data flow.
-Lucide-react	Provides a library of icons for consistent UI elements.
-React-toastify	Displays notifications to enhance user experience.
-Tailwind CSS	Styling framework for rapid UI design and custom styles.
-Socket.IO-Client	Enables real-time communication, particularly for bidding and collaboration.
-Konva	Provides a canvas interface for artwork creation and drawing.
-Web3.js	JavaScript library to interact with Ethereum blockchain.
-Thirdweb	Simplifies blockchain integration, especially for minting NFTs.
-Project Setup
-Clone Repository
+## Table of Contents
+1. [Overview](#overview)
+2. [Technology Stack](#technology-stack)
+3. [Project Setup](#project-setup)
+4. [Core Components](#core-components)
+5. [State Management](#state-management)
+6. [Socket and Real-time Communication](#socket-and-real-time-communication)
+7. [Web3 Integration](#web3-integration)
+8. [UI Components and Styling](#ui-components-and-styling)
+9. [Future Enhancements](#future-enhancements)
 
-bash
-Copy code
-git clone <repository-url>
-cd metamuse-frontend
-Install Dependencies
+## Overview
 
-bash
-Copy code
-npm install
-Environment Variables
-Set up .env file with the following variables:
+The Metamuse frontend is built with React, TypeScript, and Vite to ensure high-performance development. It leverages **Thirdweb** and **web3.js** for blockchain interactions, enabling NFT minting for collaborative artwork. Artists collaborate on a **Konva**-based canvas, and their work appears in a marketplace where users can place real-time bids.
 
-REACT_APP_API_URL - Backend API URL
-REACT_APP_SOCKET_URL - Socket server URL
-REACT_APP_THIRDWEB_KEY - Thirdweb API key
-Run Development Server
+## Technology Stack
 
-bash
-Copy code
-npm run dev
-Core Components
-1. Canvas
-Built with Konva.
-Includes basic drawing tools (brush, shapes, colors).
-Saves collaborative artwork data locally and on the blockchain.
-2. Marketplace
-Fetches and displays minted artworks.
-Enables bidding through Socket.IO.
-3. Notifications
-React-toastify is used for success, error, and bidding notifications.
-4. User Authentication
-Uses Thirdweb for Web3 authentication.
-5. Minting
-Integrates web3.js and Thirdweb to mint completed artworks as NFTs.
-NFTs appear on the marketplace post-minting.
-State Management
-Tacstack is used to manage global states, ensuring a smooth flow of data between components.
-Component-specific states (e.g., artwork data, bid status) are localized to reduce re-rendering.
-Socket and Real-time Communication
-Socket.IO-Client is utilized to manage real-time events:
+| Technology             | Description                                                                           |
+| ---------------------- | ------------------------------------------------------------------------------------- |
+| **React-TypeScript-Vite** | Provides a component-based, type-safe UI.                                          |
+| **Tacstack**           | Manages UI state and data flow effectively.                                           |
+| **Lucide-react**       | Provides a library of icons for consistent UI elements.                               |
+| **React-toastify**     | Displays notifications to improve user experience.                                    |
+| **Tailwind CSS**       | Styling framework for rapid UI design and custom styles.                              |
+| **Socket.IO-Client**   | Enables real-time communication, especially for bidding and collaboration.            |
+| **Konva**              | Canvas-based interface for creating and drawing artwork.                              |
+| **Web3.js**            | JavaScript library for Ethereum blockchain interactions.                              |
+| **Thirdweb**           | Simplifies blockchain integration, particularly for NFT minting.                     |
 
-Collaboration on canvas.
-Live bidding updates in the marketplace.
-Notifications for bid increments and outbid events.
-Ensure the Socket.IO server URL is set in .env.
+## Project Setup
 
-Web3 Integration
-Thirdweb
-Thirdweb handles:
-NFT minting process.
-Authentication and wallet management.
-Web3.js
-Web3.js is used for:
-Transaction management and wallet connection.
-Contract interaction for bidding and transfers.
-UI Components and Styling
-Icons
-
-Provided by Lucide-react for uniform iconography.
-Styling
-
-Built with Tailwind CSS.
-Uses custom classes and responsive design principles.
-Notifications
-
-Configured with React-toastify to display status updates and confirmations.
-Future Enhancements
-Implementing additional bidding features like bid history and bidding analytics.
-Expanding collaboration tools on the Konva canvas.
-Enhancing wallet support and multi-chain capabilities.
+1. **Clone the Repository**
+   ```bash
+   git clone <repository-url>
+   cd metamuse-frontend
