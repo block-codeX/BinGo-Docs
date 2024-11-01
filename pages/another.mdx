@@ -39,57 +39,8 @@ The Metamuse frontend is built with React, TypeScript, and Vite to ensure high-p
    git clone <repository-url>
    cd metamuse-frontend
 
-mdx
-Copy code
-# Installation and Setup
+ Installation and Setup
 
 ### Install Dependencies
 ```bash
 npm install
-Environment Variables
-Create a .env file with the following variables:
-
-REACT_APP_API_URL: Backend API URL
-REACT_APP_SOCKET_URL: Socket server URL
-REACT_APP_THIRDWEB_KEY: Thirdweb API key
-Run the Development Server
-bash
-Copy code
-npm run dev
-Core Components
-Canvas
-Built with Konva.
-Includes drawing tools (brush, shapes, colors).
-Saves collaborative artwork locally and on the blockchain.
-Marketplace
-Fetches and displays minted artworks.
-Enables real-time bidding using Socket.IO.
-Notifications
-React-toastify provides success, error, and bidding notifications.
-User Authentication
-Thirdweb is used for Web3 authentication and wallet management.
-Minting
-Uses web3.js and Thirdweb to mint collaborative artwork as NFTs.
-Minted NFTs appear on the marketplace.
-State Management
-Tacstack is used for global state management, enabling smooth data flow across components.
-Localized state is used for specific components (e.g., artwork data, bid status) to reduce re-rendering.
-Socket and Real-time Communication
-Socket.IO-Client enables real-time events such as:
-Canvas collaboration.
-Live bidding updates.
-Notifications for bid increments and outbid events.
-Ensure the Socket.IO server URL is configured in .env.
-Web3 Integration
-Thirdweb
-Handles the NFT minting process, user authentication, and wallet management.
-Web3.js
-Manages transactions, wallet connections, and contract interactions for bidding and transfers.
-UI Components and Styling
-Icons: Provided by Lucide-react for consistent iconography.
-Styling: Built with Tailwind CSS for a responsive design using custom classes.
-Notifications: Configured with React-toastify for real-time status updates.
-Future Enhancements
-Additional bidding features like bid history and analytics.
-Enhanced collaboration tools on the Konva canvas.
-Support for multiple wallets and multi-chain capabilities.
