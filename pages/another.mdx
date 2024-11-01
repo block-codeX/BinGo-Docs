@@ -1,31 +1,100 @@
-# Another Page
+Metamuse Frontend Documentation
+Version: 1.0
+Description: Metamuse is a collaborative platform for artists to create, mint, and showcase artworks in a marketplace where collectors can place bids.
 
-```js filename="demo.js" {3} copy
-let a = 1;
+Table of Contents
+Overview
+Technology Stack
+Project Setup
+Core Components
+State Management
+Socket and Real-time Communication
+Web3 Integration
+UI Components and Styling
+Overview
+The Metamuse frontend is built using React with TypeScript and Vite for a high-performance development environment. It leverages Thirdweb and web3.js for blockchain interactions, enabling minting of collaborative artwork as NFTs. Artists can collaborate on a Konva-based canvas and view artwork in a marketplace where users can bid in real time.
 
-console.log(a);
-```
+Technology Stack
+Technology	Description
+React-TypeScript-Vite	Core framework for component-based, type-safe UI.
+Tacstack	Ensures effective UI state management and data flow.
+Lucide-react	Provides a library of icons for consistent UI elements.
+React-toastify	Displays notifications to enhance user experience.
+Tailwind CSS	Styling framework for rapid UI design and custom styles.
+Socket.IO-Client	Enables real-time communication, particularly for bidding and collaboration.
+Konva	Provides a canvas interface for artwork creation and drawing.
+Web3.js	JavaScript library to interact with Ethereum blockchain.
+Thirdweb	Simplifies blockchain integration, especially for minting NFTs.
+Project Setup
+Clone Repository
 
-## Component
+bash
+Copy code
+git clone <repository-url>
+cd metamuse-frontend
+Install Dependencies
 
-import { useState } from 'react'
+bash
+Copy code
+npm install
+Environment Variables
+Set up .env file with the following variables:
 
-{/* Import CSS modules */}
-import styles from '../components/counters.module.css'
+REACT_APP_API_URL - Backend API URL
+REACT_APP_SOCKET_URL - Socket server URL
+REACT_APP_THIRDWEB_KEY - Thirdweb API key
+Run Development Server
 
-export const Counter = () => {
-  const [count, setCount] = useState(0);
-  return (
-    <div>
-      <button onClick={() => setCount(count + 1)} className={styles.counter}>Clicked {count} times</button>
-    </div>
-  );
-};
+bash
+Copy code
+npm run dev
+Core Components
+1. Canvas
+Built with Konva.
+Includes basic drawing tools (brush, shapes, colors).
+Saves collaborative artwork data locally and on the blockchain.
+2. Marketplace
+Fetches and displays minted artworks.
+Enables bidding through Socket.IO.
+3. Notifications
+React-toastify is used for success, error, and bidding notifications.
+4. User Authentication
+Uses Thirdweb for Web3 authentication.
+5. Minting
+Integrates web3.js and Thirdweb to mint completed artworks as NFTs.
+NFTs appear on the marketplace post-minting.
+State Management
+Tacstack is used to manage global states, ensuring a smooth flow of data between components.
+Component-specific states (e.g., artwork data, bid status) are localized to reduce re-rendering.
+Socket and Real-time Communication
+Socket.IO-Client is utilized to manage real-time events:
 
-<Counter/>
+Collaboration on canvas.
+Live bidding updates in the marketplace.
+Notifications for bid increments and outbid events.
+Ensure the Socket.IO server URL is set in .env.
 
-## External Component
+Web3 Integration
+Thirdweb
+Thirdweb handles:
+NFT minting process.
+Authentication and wallet management.
+Web3.js
+Web3.js is used for:
+Transaction management and wallet connection.
+Contract interaction for bidding and transfers.
+UI Components and Styling
+Icons
 
-import Counters from '../components/counters'
+Provided by Lucide-react for uniform iconography.
+Styling
 
-<Counters />
+Built with Tailwind CSS.
+Uses custom classes and responsive design principles.
+Notifications
+
+Configured with React-toastify to display status updates and confirmations.
+Future Enhancements
+Implementing additional bidding features like bid history and bidding analytics.
+Expanding collaboration tools on the Konva canvas.
+Enhancing wallet support and multi-chain capabilities.
